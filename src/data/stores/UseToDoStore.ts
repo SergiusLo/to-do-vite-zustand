@@ -10,4 +10,5 @@ interface ToDoStore {
   tasks: Task[];
   createdTask: (title: string) => void;
   updateTask: (id: string, title: string) => void;
+  removeTask: (id: string) => void;
 }
