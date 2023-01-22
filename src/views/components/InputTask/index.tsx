@@ -38,14 +38,18 @@ export const InputTask: React.FC<InputTaskProps> = ({
           onChange={(evt) => {
             setChecked(evt.target.checked);
             if (evt.target.checked) {
-              onDone(id);
+              setTimeout(() => {
+                onDone(id);
+              }, 300);
             }
           }}
         />
         {isEditMode ? (
           <input
             value={value}
-            onChange={(evt) => setValue(evt.target.value)}
+            onChange={(evt) => {
+              setValue(evt.target.value);
+            }}
             ref={editTitleInputRef}
             className={styles.inputTaskTitleEdit}
             onKeyDown={(evt) => {
